@@ -32,3 +32,17 @@
     },
   },
 });
+17. authProtection :create proxy.js 
+18. go ot google console  and create client id or secret and set .env  file : social provider google 
+19. set client id or secret in auth.js : socialProviders: {
+        google: { 
+            clientId: process.env.BETTER_AUTH_GOOGLE_CLIENT_ID, 
+            clientSecret: process.env.BETTER_AUTH_GOOGLE_SECRET, 
+        }, 
+    },
+
+20. install resend.com , nextjs == npm install resend
+21. Email verification: 
+a.resend.com
+b.create api key
+c.add api key in .env

@@ -12,7 +12,8 @@ export default function Navbar() {
 //   console.log(session);
 const router = useRouter();
 
-  const handleSignOut = async () => {
+  const handleSignOut = async (e) => {
+    e.preventDefault();
   try {
     const result = await authClient.signOut();
     console.log("Sign out result:", result);

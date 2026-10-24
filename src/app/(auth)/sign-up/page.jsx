@@ -1,5 +1,6 @@
+
 "use client";
-import { signUp } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
 import {
   Button,
   Description,
@@ -22,7 +23,7 @@ const SignUpPage = () => {
     formData.forEach((value, key) => {
       data[key] = value.toString();
     });
-    const { data:signupData, error } = await signUp.email({
+    const { data:signupData, error } = signUp.email({
     name: data.name, // required, The name of the user.
     email: data.email, // required, The email address of the user.
     password: data.password, // required, The password of the user. It should be at least 8 characters long and max 128 by default.
@@ -31,6 +32,11 @@ const SignUpPage = () => {
     toast.success("Form submitted successfully!");
     console.log(signupData, error);
   };
+  const handleSignUpGoogle = async() => {
+    const data = await signIn.social({
+      provider: "google",
+    });
+    }
     return (
         <div className="flex justify-center"> 
             <h1>Sign-Up Page</h1>
@@ -85,13 +91,15 @@ const SignUpPage = () => {
         <Fieldset.Actions>
           <Button type="submit">
             
-            Save changes
+            SignUp
           </Button>
           <Button type="reset" variant="secondary">
             Cancel
           </Button>
         </Fieldset.Actions>
       </Fieldset>
+      <br />
+    <Button onClick={handleSignUpGoogle}>SignUp Google</Button>
     </Form>
         </div>
     );
