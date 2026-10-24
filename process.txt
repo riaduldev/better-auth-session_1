@@ -7,4 +7,6 @@
 7. create sign-up page
 8. install heroUi: npm i @heroui/styles @heroui/react
 9. import in global css: @import "@heroui/styles";
-10. 
+10. toast alert from heroUi
+11. design sign-up page 
+12. create this route : /app/api/auth/[...all]/route.ts
