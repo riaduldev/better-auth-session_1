@@ -10,3 +10,25 @@
 10. toast alert from heroUi
 11. design sign-up page 
 12. create this route : /app/api/auth/[...all]/route.ts
+13. onSubmit SignUp == const { data, error } = await authClient.signUp.email({
+    name: "John Doe", // required, The name of the user.
+    email: "john.doe@example.com", // required, The email address of the user.
+    password: "password1234", // required, The password of the user. It should be at least 8 characters long and max 128 by default.
+    image: "https://example.com/image.png", // An optional profile image of the user.
+    callbackURL: "https://example.com/callback", // An optional URL to redirect to after the user signs up.
+});
+14. onSubmit SignIn ===  const { data:signInData, error } = await signIn.email({
+    email: data.email, // required, The email address of the user.
+    password: data.password, // required, The password of the user. It should be at least 8 characters long and max 128 by default.
+    rememberMe: true, // If false, the user will be signed out when the browser is closed. (optional) (default: true)
+    callbackURL: "/", // An optional URL to redirect to after the user signs in. (optional)
+});
+
+15. use session management:  const { data: session } = authClient.useSession()
+16. SignOut system: await authClient.signOut({
+  fetchOptions: {
+    onSuccess: () => {
+      router.push("/login"); // redirect to login page
+    },
+  },
+});
