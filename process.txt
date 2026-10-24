@@ -1,0 +1,10 @@
+1. create nextJs
+2. npm install better-auth
+3. npm i mongodb
+4. npm install @better-auth/mongo-adapter
+5. mongodb configure in auth.js 
+6. mongodb uri connect in project
+7. create sign-up page
+8. install heroUi: npm i @heroui/styles @heroui/react
+9. import in global css: @import "@heroui/styles";
+10. 
